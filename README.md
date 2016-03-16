@@ -10,6 +10,25 @@ complete the work.
 To get data, we've simlulated a preloaded result of products that are available
 at `window.Data.products`.
 
+## Instructions
+
+You will be building a simple tool to list a group of products and allow user to
+filter this list by properties of the products.
+
+1. When no filters are active, the user should see all products. Each product should
+have its name, brand, image, and price displayed.
+2. The user should see UI for filtering the products by their color. The options
+for the users to choose should be limited by the colors that are available on products.
+3. The user should see UI for filtering the products by their price. The options
+for this filter should be "Less than $50", "$50 to $100", and "Over $100". You may
+assume we don't have products that are exactly 50 or 100 dollars.
+4. The user may only have one filter from the "Color" filter and "Price" filter active
+at a given time. If they have both a "Color" and "Price" filter active at the same time,
+they should see the products that match _both_ filters.
+5. The user may clear the "Color" and "Price" filter independently.
+6. If no products match the user's filters, a message should be displayed to the
+user to this effect.
+
 ## Setup
 
 ### System Dependencies
