@@ -55,7 +55,8 @@ You will need the latest versions of:
 ## Submission
 
 Please commit your work, then archive ZIP, Tarball, whatever, the entire directory
-and email to [evan@huckberry.com](evan@huckberry.com).
+and email to [evan@huckberry.com](evan@huckberry.com). Please let us know approximately 
+how much time you spent on your solution.
 
 ## Evaluation
 
