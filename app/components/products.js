@@ -3,7 +3,6 @@ import OneProduct from './oneProduct';
 import Dropdown from './dropdown';
 
 var PRICE_OPTIONS = ["Less than $50", "$50 to $100", "Over $100"];
-var PRICE_OPTIONS_INTS = [[0, 50], [51, 100]];
 
 var productColors = {}
 Data.products.forEach(function(product){
@@ -17,11 +16,11 @@ export default React.createClass({
   getInitialState: function(){
     return ({priceFilter: null, colorFilter: null});
   },
-  updateFilter: function(option){
-    if(PRICE_OPTIONS.indexOf(option)!==-1){
-      this.setState({priceFilter: option})
+  updateFilter: function(filter){
+    if(filter["Prices"] !== undefined){
+      this.setState({priceFilter: filter["Prices"]})
     }else{
-      this.setState({colorFilter: option})
+      this.setState({colorFilter: filter["Colors"]})
     }
   },
   render() {
@@ -33,6 +32,7 @@ export default React.createClass({
       <div>
         <Dropdown name="Colors" options={COLOR_OPTIONS} updateFilter={this.updateFilter}/>
         <Dropdown name="Prices" options={PRICE_OPTIONS} updateFilter={this.updateFilter}/>
+        {productList.length} results
         <ul className="ProductList">
           <h2>Products</h2>
           {productList}

@@ -3,12 +3,18 @@ import Option from './option';
 
 export default React.createClass({
   getInitialState: function(){
-    return ({isOpen: false, selected: "Navy"});
+    return ({isOpen: false, selected: null});
   },
   handleOptionClick: function(e){
     var newOption = e.target.innerHTML;
-    this.setState({selected: newOption})
-    this.props.updateFilter(newOption)
+    if(newOption === this.props.name){
+      newOption = null;
+    }
+    console.log(newOption);
+    this.setState({selected: newOption});
+    var filter = {}
+    filter[this.props.name] = newOption
+    this.props.updateFilter(filter)
   },
   render() {
     var that = this;
@@ -18,8 +24,8 @@ export default React.createClass({
     });
     return (
       <div className="dropdown">
-        {this.props.name}
         <ul onClick={this.handleOptionClick}>
+          <li>{this.props.name}</li>
           {options}
         </ul>
       </div>
