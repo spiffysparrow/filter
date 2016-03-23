@@ -6,8 +6,9 @@ export default React.createClass({
     return ({isOpen: false, selected: "Navy"});
   },
   handleOptionClick: function(e){
-    var newColor = e.target.innerHTML;
-    this.setState({selected: newColor})
+    var newOption = e.target.innerHTML;
+    this.setState({selected: newOption})
+    this.props.updateFilter(newOption)
   },
   render() {
     var that = this;
