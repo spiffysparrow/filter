@@ -11,6 +11,7 @@ body {
 
 ul{
   list-style-type: none;
+  padding: 0;
 }
 
 h1 {
@@ -18,7 +19,7 @@ h1 {
     color: white;
 }
 
-.dropdown li.selected{
+.dropdown li.selected, .price{
     color: #e36e3a;
     display: inherit;
 }
@@ -26,6 +27,20 @@ h1 {
 .dropdown li.optionTitle{
   opacity: .5;
   display: inherit;
+}
+
+
+.closed li.optionTitle:after {
+    content: " ▾";
+}
+
+li.optionTitle:after {
+    content: " ▴";
+}
+
+li.option:hover{
+  background: black;
+  color: white;
 }
 
 .dropdown{
@@ -37,7 +52,7 @@ h1 {
 }
 
 ul.ProductList {
-    border-right: grey solid 1px;
+    border-left: grey solid 1px;
 }
 
 img{

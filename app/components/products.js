@@ -36,17 +36,17 @@ export default React.createClass({
     }
     return (
       <div>
-        <ul className="ProductList col-sm-9">
-          <h2>Products</h2>
+        <div className="col-sm-2">
+          <h5>Filter By</h5>
+          <Dropdown name="Colors" options={COLOR_OPTIONS} updateFilter={this.updateFilter}/>
+          <Dropdown name="Prices" options={PRICE_OPTIONS} updateFilter={this.updateFilter}/>
+        </div>
+        <ul className="ProductList col-sm-10">
           {numberResults}
           <div>
             {productList}
           </div>
         </ul>
-        <div className="col-sm-3">
-          <Dropdown name="Colors" options={COLOR_OPTIONS} updateFilter={this.updateFilter}/>
-          <Dropdown name="Prices" options={PRICE_OPTIONS} updateFilter={this.updateFilter}/>
-        </div>
       </div>
     );
   }

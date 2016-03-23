@@ -10,7 +10,6 @@ export default React.createClass({
   },
   handleOptionClick: function(e){
     var newOption = e.target.innerHTML;
-    debugger
     if(!e.target.classList.contains("option")){
       newOption = null;
     }
@@ -31,7 +30,7 @@ export default React.createClass({
     return (
       <div className={"dropdown " + open} onClick={this.toggleOpen}>
         <ul onClick={this.handleOptionClick}>
-          <li className="optionTitle">Filter by {this.props.name}</li>
+          <li className="optionTitle">{this.props.name}</li>
           {options}
         </ul>
       </div>
