@@ -28,11 +28,17 @@ export default React.createClass({
     var productList = filteredProducts.map(function(item, i){
       return (<OneProduct key={i} product={item}/>)
     });
+    var numberResults;
+    if(productList.length === 0){
+      numberResults = "Sorry, no results found."
+    }else{
+      numberResults = productList.length + " results found."
+    }
     return (
       <div>
         <Dropdown name="Colors" options={COLOR_OPTIONS} updateFilter={this.updateFilter}/>
         <Dropdown name="Prices" options={PRICE_OPTIONS} updateFilter={this.updateFilter}/>
-        {productList.length} results
+        {numberResults}
         <ul className="ProductList">
           <h2>Products</h2>
           {productList}
