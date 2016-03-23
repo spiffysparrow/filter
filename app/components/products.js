@@ -4,7 +4,7 @@ import OneProduct from './oneProduct';
 export default React.createClass({
   render() {
     var productList = Data.products.map(function(item, i){
-      return (<OneProduct key={i}/>)
+      return (<OneProduct key={i} product={item}/>)
     });
     return (
       <div className="Products">
