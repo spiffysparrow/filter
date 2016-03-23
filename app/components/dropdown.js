@@ -5,6 +5,9 @@ export default React.createClass({
   getInitialState: function(){
     return ({isOpen: false, selected: null});
   },
+  toggleOpen: function(){
+    this.setState({isOpen: !this.state.isOpen})
+  },
   handleOptionClick: function(e){
     var newOption = e.target.innerHTML;
     if(newOption === this.props.name){
@@ -22,10 +25,12 @@ export default React.createClass({
       var isSelected = (option === that.state.selected)
       return( <Option key={i} isSelected={isSelected} name={option} />)
     });
+    var open = this.state.isOpen ? "open" : "";
+
     return (
-      <div className="dropdown">
+      <div className={"dropdown " + open} onClick={this.toggleOpen}>
         <ul onClick={this.handleOptionClick}>
-          <li>{this.props.name}</li>
+          <li className="optionTitle">{this.props.name}</li>
           {options}
         </ul>
       </div>
