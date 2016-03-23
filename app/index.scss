@@ -13,12 +13,18 @@ ul{
   list-style-type: none;
 }
 
+h1 {
+    background: black;
+    color: white;
+}
+
 .dropdown li.selected{
-    color: cyan;
+    color: #e36e3a;
     display: inherit;
 }
 
 .dropdown li.optionTitle{
+  opacity: .5;
   display: inherit;
 }
 
@@ -26,8 +32,16 @@ ul{
   cursor: pointer;
 }
 
-.open li{
+.closed li{
   display: none;
+}
+
+ul.ProductList {
+    border-right: grey solid 1px;
+}
+
+img{
+  width: 100%;
 }
 
 @import "styles/products";

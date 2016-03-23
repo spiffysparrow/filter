@@ -32,17 +32,21 @@ export default React.createClass({
     if(productList.length === 0){
       numberResults = "Sorry, no results found."
     }else{
-      numberResults = productList.length + " results found."
+      numberResults = productList.length + " results found"
     }
     return (
       <div>
-        <Dropdown name="Colors" options={COLOR_OPTIONS} updateFilter={this.updateFilter}/>
-        <Dropdown name="Prices" options={PRICE_OPTIONS} updateFilter={this.updateFilter}/>
-        {numberResults}
-        <ul className="ProductList">
+        <ul className="ProductList col-sm-9">
           <h2>Products</h2>
-          {productList}
+          {numberResults}
+          <div>
+            {productList}
+          </div>
         </ul>
+        <div className="col-sm-3">
+          <Dropdown name="Colors" options={COLOR_OPTIONS} updateFilter={this.updateFilter}/>
+          <Dropdown name="Prices" options={PRICE_OPTIONS} updateFilter={this.updateFilter}/>
+        </div>
       </div>
     );
   }

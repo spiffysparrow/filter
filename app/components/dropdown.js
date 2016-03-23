@@ -10,10 +10,10 @@ export default React.createClass({
   },
   handleOptionClick: function(e){
     var newOption = e.target.innerHTML;
-    if(newOption === this.props.name){
+    debugger
+    if(!e.target.classList.contains("option")){
       newOption = null;
     }
-    console.log(newOption);
     this.setState({selected: newOption});
     var filter = {}
     filter[this.props.name] = newOption
@@ -25,12 +25,13 @@ export default React.createClass({
       var isSelected = (option === that.state.selected)
       return( <Option key={i} isSelected={isSelected} name={option} />)
     });
-    var open = this.state.isOpen ? "open" : "";
+
+    var open = this.state.isOpen ? "" : "closed";
 
     return (
       <div className={"dropdown " + open} onClick={this.toggleOpen}>
         <ul onClick={this.handleOptionClick}>
-          <li className="optionTitle">{this.props.name}</li>
+          <li className="optionTitle">Filter by {this.props.name}</li>
           {options}
         </ul>
       </div>
