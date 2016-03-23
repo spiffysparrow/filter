@@ -1,15 +1,26 @@
 import React from 'react';
+import Option from './option';
 
 export default React.createClass({
-
+  getInitialState: function(){
+    return ({isOpen: false, selected: "Navy"});
+  },
+  handleOptionClick: function(e){
+    var newColor = e.target.innerHTML;
+    this.setState({selected: newColor})
+  },
   render() {
+    var that = this;
     var options = this.props.options.map(function(option, i){
-      return( <li key={i}> {option} </li>)
+      var isSelected = (option === that.state.selected)
+      return( <Option key={i} isSelected={isSelected} name={option} />)
     });
     return (
       <div className="dropdown">
         {this.props.name}
-        <ul>{options}</ul>
+        <ul onClick={this.handleOptionClick}>
+          {options}
+        </ul>
       </div>
     );
   }
