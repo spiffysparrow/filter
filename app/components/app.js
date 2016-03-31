@@ -5,7 +5,7 @@ export default React.createClass({
   render() {
     return (
       <div className="App">
-        <h1>Huckberry</h1>
+        <h1>Meddlesome Fox</h1>
         <Products />
       </div>
     );
